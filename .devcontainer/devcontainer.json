@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "11",
+      "version": "17",
       "installMaven": true
     },
     "ghcr.io/devcontainers/features/node:1": {
@@ -24,10 +24,10 @@
       "settings": {
         "java.configuration.runtimes": [
           {
-            "name": "JavaSE-11",
+            "name": "JavaSE-17",
             "path": "/usr/local/sdkman/candidates/java/current",
             "sources": "/usr/local/sdkman/candidates/java/current/lib/src.zip",
-            "javadoc": "https://docs.oracle.com/en/java/javase/11/docs/api",
+            "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
             "default": true
           }
         ]

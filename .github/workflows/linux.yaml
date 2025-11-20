@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        java: [11, 17]
+        java: [17]
         os: [ubuntu-latest]
     steps:
       - name: Check out code
@@ -63,7 +63,7 @@ jobs:
 
       - name: Upload Maven build artifact
         uses: actions/upload-artifact@v5
-        if: matrix.java == '11' && matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-latest'
         with:
           name: artifact
           path: modules/openapi-generator-cli/target/openapi-generator-cli.jar
@@ -73,7 +73,6 @@ jobs:
         run: gradle --project-dir modules/openapi-generator-gradle-plugin/samples/local-spec buildGoSdk --stacktrace
 
       - name: Test Maven plugin integration
-        if: matrix.java == '11'
         shell: bash
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
@@ -94,7 +93,7 @@ jobs:
       - name: Setup Maven
         uses: s4u/setup-maven-action@v1.19.0
         with:
-          java-version: 11
+          java-version: 17
           maven-version: 3.8.8
           cache: gradle
       - name: Download build artifact
