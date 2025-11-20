@@ -16,7 +16,7 @@ jobs:
   build:
     name: Gradle tests
     runs-on: ubuntu-latest
-    container: gradle:jdk11
+    container: gradle:jdk17
     strategy:
       fail-fast: true
       matrix:
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: 11
+          java-version: 17
           cache: gradle
       # Cache Gradle Dependencies
       - name: Setup Gradle Dependencies Cache

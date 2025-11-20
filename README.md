@@ -210,7 +210,7 @@ See the different versions of the [openapi-generator-cli](https://search.maven.o
 
 ### [1.3 - Download JAR](#table-of-contents)
 <!-- RELEASE_VERSION -->
-If you're looking for the latest stable version, you can grab it directly from Maven.org (Java 11 runtime at a minimum):
+If you're looking for the latest stable version, you can grab it directly from Maven.org (Java 17 runtime at a minimum):
 
 JAR location: `https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.17.0/openapi-generator-cli-7.17.0.jar`
 
@@ -226,9 +226,9 @@ Invoke-WebRequest -OutFile openapi-generator-cli.jar https://repo1.maven.org/mav
 
 After downloading the JAR, run `java -jar openapi-generator-cli.jar help` to show the usage.
 
-For Mac users, please make sure Java 11 is installed (Tips: run `java -version` to check the version), and export `JAVA_HOME` in order to use the supported Java version:
+For Mac users, please make sure Java 17 is installed (Tips: run `java -version` to check the version), and export `JAVA_HOME` in order to use the supported Java version:
 ```sh
-export JAVA_HOME=`/usr/libexec/java_home -v 1.11`
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
 export PATH=${JAVA_HOME}/bin:$PATH
 ```
 
@@ -280,7 +280,7 @@ openapi-generator-cli version # is always 4.0.2, unless any of the above overrid
 
 To build from source, you need the following installed and available in your `$PATH:`
 
-* [Java 11](https://adoptium.net/)
+* [Java 17](https://adoptium.net/)
 
 * [Apache Maven 3.8.8 or greater](https://maven.apache.org/) (optional)
 
@@ -295,7 +295,7 @@ If you're a nix user, you can enter OpenAPI Generator shell, by typing:
 ```sh
 nix develop
 ```
-It will enter a shell with Java 11 installed.
+It will enter a shell with Java 17 installed.
 
 Direnv supports automatically loading of the nix developer shell, so if you're using direnv too, type:
 ```sh
@@ -322,8 +322,8 @@ To reinstall with the latest master, run `brew uninstall openapi-generator && br
 To install OpenJDK (pre-requisites), please run
 ```sh
 brew tap AdoptOpenJDK/openjdk
-brew install --cask adoptopenjdk11
-export JAVA_HOME=`/usr/libexec/java_home -v 1.11`
+brew install --cask adoptopenjdk17
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
 ```
 
 or download installer via https://adoptium.net/
